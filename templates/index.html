@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Marathon Calculator</title>
+  </head>
+  <body>
+    <h1>Marathon Calculator</h1>
+    <form action="/" method="post">
+      <label for="pace">Pace (min/km):</label>
+      <input type="text" name="pace" id="pace" required>
+      <input type="submit" value="Calculate">
+    </form>
+    {% if split_times %}
+    <h2>Split Times</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Interval (km)</th>
+          <th>Time (min)</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for i, t in split_times %}
+        <tr>
+          <td>{{ i }}</td>
+          <td>{{ t }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% endif %}
+  </body>
+</html>
